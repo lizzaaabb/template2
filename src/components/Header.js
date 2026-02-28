@@ -5,13 +5,13 @@ import '../styles/Header.css'
 const Logo = '/logo1.png' /* შეცვალე */
 
 const navLinks = [
-  { label: 'მთავარი',      href: '#home' },
+  { label: 'მთავარი',       href: '#home' },
   { label: 'ჩვენს შესახებ', href: '#about' },
-  { label: 'სერვისები',    href: '#services' },
-  { label: 'კონტაქტი',    href: '#contact' },
+  { label: 'სერვისები',     href: '#services' },
+  { label: 'კონტაქტი',     href: '#contact' },
 ]
 
-const PHONE    = 'tel:+995500000000'     /* შეცვალე */
+const PHONE     = 'tel:+995500000000'   /* შეცვალე */
 const PHONE_LBL = '+995 500 00 00 00'   /* შეცვალე */
 
 function handleScroll(e, href) {
@@ -30,78 +30,66 @@ export default function Header() {
   }
 
   return (
-    <header className="hdr-outer" role="banner">
-      <nav className="hdr-inner" aria-label="მთავარი ნავიგაცია">
+    <>
+      {/* ── Overlay ── */}
+      <div
+        className={`hdr-overlay ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
 
-        {/* Logo */}
-        <a
-          href="#home"
-          className="hdr-logo-wrap"
-          onClick={e => handleScroll(e, '#home')}
-          aria-label="მთავარ გვერდზე გადასვლა"
-        >
-          <img
-            src={Logo}
-            alt="ლოგო"
-            className="hdr-logo"
-            width="72"
-            height="72"
-            loading="eager"
-          />
-        </a>
+      {/* ── Header bar ── */}
+      <header className="hdr-outer" role="banner">
+        <nav className="hdr-inner" aria-label="მთავარი ნავიგაცია">
 
-        {/* Desktop nav */}
-        <ul className="hdr-nav" role="list">
-          {navLinks.map((link, i) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className="hdr-nav-link"
-                onClick={e => handleScroll(e, link.href)}
-              >
-                {link.label}
-              </a>
-              {i < navLinks.length - 1 && (
-                <span className="hdr-nav-divider" aria-hidden="true" />
-              )}
-            </li>
-          ))}
-        </ul>
+          <a
+            href="#home"
+            className="hdr-logo-wrap"
+            onClick={e => handleScroll(e, '#home')}
+            aria-label="მთავარ გვერდზე გადასვლა"
+          >
+            <img src={Logo} alt="ლოგო" className="hdr-logo" width="72" height="72" loading="eager" />
+          </a>
 
-        {/* CTA */}
-        <a href={PHONE} className="hdr-cta" aria-label={`დაგვიკავშირდი - ${PHONE_LBL}`}>
-          დაგვიკავშირდი
-        </a>
+          <ul className="hdr-nav" role="list">
+            {navLinks.map((link, i) => (
+              <li key={link.label}>
+                <a href={link.href} className="hdr-nav-link" onClick={e => handleScroll(e, link.href)}>
+                  {link.label}
+                </a>
+                {i < navLinks.length - 1 && <span className="hdr-nav-divider" aria-hidden="true" />}
+              </li>
+            ))}
+          </ul>
 
-        {/* Hamburger */}
-        <button
-          className="hdr-hamburger"
-          onClick={() => setMenuOpen(o => !o)}
-          aria-label={menuOpen ? 'მენიუს დახურვა' : 'მენიუს გახსნა'}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-        >
-          <span className={`hdr-ham-line ${menuOpen ? 'open' : ''}`} aria-hidden="true" />
-          <span className={`hdr-ham-line ${menuOpen ? 'open' : ''}`} aria-hidden="true" />
-          <span className={`hdr-ham-line ${menuOpen ? 'open' : ''}`} aria-hidden="true" />
-        </button>
+          <a href={PHONE} className="hdr-cta" aria-label={`დაგვიკავშირდი - ${PHONE_LBL}`}>
+            დაგვიკავშირდი
+          </a>
 
-      </nav>
+          {/* Hamburger — animates into X when open, circle appears */}
+          <button
+            className={`hdr-hamburger ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label={menuOpen ? 'მენიუს დახურვა' : 'მენიუს გახსნა'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className={`hdr-ham-line ${menuOpen ? 'open' : ''}`} aria-hidden="true" />
+            <span className={`hdr-ham-line ${menuOpen ? 'open' : ''}`} aria-hidden="true" />
+            <span className={`hdr-ham-line ${menuOpen ? 'open' : ''}`} aria-hidden="true" />
+          </button>
 
-      {/* Mobile drawer */}
+        </nav>
+      </header>
+
+      {/* ── Mobile drawer — OUTSIDE <header>, no close button inside ── */}
       <div
         id="mobile-menu"
         className={`hdr-mobile-menu ${menuOpen ? 'open' : ''}`}
         aria-hidden={!menuOpen}
+        role="dialog"
+        aria-modal="true"
       >
-        <button
-          className="hdr-drawer-close"
-          onClick={() => setMenuOpen(false)}
-          aria-label="მენიუს დახურვა"
-        >
-          ✕
-        </button>
-
         {navLinks.map(link => (
           <a
             key={link.label}
@@ -122,6 +110,6 @@ export default function Header() {
           დაგვიკავშირდი
         </a>
       </div>
-    </header>
+    </>
   )
 }
