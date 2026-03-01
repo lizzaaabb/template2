@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.28em;
@@ -74,7 +74,7 @@
 }
 
 .a2-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 3rem;
   font-weight: 800;
   color: #ffffff;
@@ -91,7 +91,7 @@
 }
 
 .a2-desc {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.9rem;
   font-weight: 300;
   color: rgba(255,255,255,0.42);
@@ -123,7 +123,7 @@
 .a2-stat:hover { background: rgba(147,197,253,0.05); }
 
 .a2-stat-val {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
   margin: 0 0 4px 0;
@@ -135,7 +135,7 @@
 }
 
 .a2-stat-lbl {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.62rem;
   font-weight: 300;
   color: rgba(255,255,255,0.32);
@@ -218,7 +218,7 @@
 }
 
 .a2-card-index {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.58rem;
   font-weight: 300;
   letter-spacing: 0.22em;
@@ -240,7 +240,7 @@
 }
 
 .a2-card-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: #ffffff;
@@ -250,7 +250,7 @@
 }
 
 .a2-card-desc {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.78rem;
   font-weight: 300;
   color: rgba(255,255,255,0.38);

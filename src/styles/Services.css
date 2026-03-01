@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.28em;
@@ -75,7 +75,7 @@
 }
 
 .s2-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 3rem;
   font-weight: 800;
   color: #ffffff;
@@ -199,7 +199,7 @@
 }
 
 .s2-card-index {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.56rem;
   font-weight: 300;
   letter-spacing: 0.22em;
@@ -211,7 +211,7 @@
 .s2-card:hover .s2-card-index { color: rgba(147,197,253,0.8); }
 
 .s2-card-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
@@ -220,7 +220,7 @@
 }
 
 .s2-card-desc {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.8rem;
   font-weight: 300;
   color: rgba(255,255,255,0.38);
@@ -235,7 +235,7 @@
 }
 
 .s2-tag {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.6rem;
   font-weight: 400;
   letter-spacing: 0.08em;
